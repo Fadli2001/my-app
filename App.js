@@ -1,10 +1,13 @@
-import { StatusBar, Text, View } from "react-native";
-import TryBasic from "./src/components/TryBasic";
+import { StatusBar, View } from "react-native";
+import FlexUI from "./src/components/FlexUI";
+import Flex from "./src/components/Flex";
 
 export default function App() {
   return (
     <View style={{ padding: 20 }}>
-      <TryBasic />
+      {/* <TryBasic /> */}
+      {/* <FlexUI/> */}
+      <Flex/>
       <StatusBar style="auto" />
     </View>
   );
