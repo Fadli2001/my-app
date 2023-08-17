@@ -1,28 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React from 'react';
+import { StyleSheet, View} from 'react-native';
 
 const FlexUI = () => {
   return (
-    <View>
-      <Text style={styles.titleText}>Flex UI</Text>
-      <View>
-        <View style={{ backroundColor: "#A020F0", flex: 1 }} />
-        <View style={{ backgroundColor: "#7cb48f", flex: 3 }} />
-      </View>
+    <View
+      style={ styles.container }>
+      <View style={{flex: 1, backgroundColor: 'red'}} />
+      <View style={{flex: 1, backgroundColor: 'darkorange'}} />
+      <View style={{flex: 1, backgroundColor: 'green'}} />
+      <View style={{flex: 1, backgroundColor: 'yellow'}} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  titleText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
   container: {
     flex: 1,
-    padding: 20,
-    flexDirection: "column",
+    flexDirection: 'row',
   },
 });
 
