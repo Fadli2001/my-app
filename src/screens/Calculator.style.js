@@ -16,6 +16,12 @@ const Styles = StyleSheet.create({
   btnView: {
     flex: 2,
   },
+  screenFirstNumber: {
+    fontSize: 96,
+    color: "#747477",
+    fontWeight: "200",
+    alignSelf: "flex-end",
+  },
   screenSecondNumber: {
     fontSize: 40,
     color: "#747477",
