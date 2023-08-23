@@ -7,19 +7,6 @@ export default function Card({ price, stock, discount, children }) {
   return (
     <View style={styles.card}>
       {imageChildren}
-      
-      {/* <Image
-        style={styles.cardImage}
-        source={{
-            uri : imgUrl
-        }}
-      /> */}
-{/* 
-      <Image
-        source={{ uri: `${API_IMAGE_URI}/t/p/w500/${item.poster_path}` }}
-        style={styles.posterImage}
-      /> */}
-
       <View style={styles.cardContent}>
         <View style={styles.priceStockContainer}>
           <View style={styles.priceContainer}>
