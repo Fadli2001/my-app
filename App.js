@@ -1,15 +1,18 @@
-import { SafeAreaView, StatusBar } from "react-native";
-import Counter from "./src/screen/Counter";
+import { SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
+import FlashSale from "./src/screen/FlashSale";
 
 export default function App() {
+ 
   return (
     <SafeAreaView
       style={{
         flex: 1,
       }}
     >
-      <Counter />
-      <StatusBar style="auto" />
+      {/* <Counter /> */}
+      {/* <Greetings/> */}
+      <FlashSale/>       
+      <StatusBar style="auto" /> 
     </SafeAreaView>
   );
 }
