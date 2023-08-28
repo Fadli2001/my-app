@@ -1,5 +1,5 @@
 import { SafeAreaView,StatusBar } from "react-native";
-import LearnList from "./src/components/LearnList";
+import FlatListExample from "./src/components/FlatListExample";
 
 export default function App() {
  
@@ -12,7 +12,8 @@ export default function App() {
       {/* <Counter /> */}
       {/* <Greetings/> */}
       {/* <FlashSale/>        */}
-      <LearnList/>
+      {/* <LearnList/> */}
+      <FlatListExample/>
       <StatusBar style="auto" /> 
     </SafeAreaView>
   );
