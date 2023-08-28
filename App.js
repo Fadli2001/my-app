@@ -1,5 +1,5 @@
-import { SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
-import FlashSale from "./src/screen/FlashSale";
+import { SafeAreaView,StatusBar } from "react-native";
+import LearnList from "./src/components/LearnList";
 
 export default function App() {
  
@@ -7,11 +7,12 @@ export default function App() {
     <SafeAreaView
       style={{
         flex: 1,
-      }}
+      }}  
     >
       {/* <Counter /> */}
       {/* <Greetings/> */}
-      <FlashSale/>       
+      {/* <FlashSale/>        */}
+      <LearnList/>
       <StatusBar style="auto" /> 
     </SafeAreaView>
   );
