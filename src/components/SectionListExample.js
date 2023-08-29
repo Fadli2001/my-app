@@ -1,5 +1,11 @@
-import { StyleSheet, Text, View, SectionList } from "react-native";
-import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SectionList,
+  TouchableOpacity,
+} from "react-native";
+import React, { useState } from "react";
 import ProductDummy from "../utils/ProductDummy";
 
 const cars = [
@@ -22,6 +28,9 @@ const cars = [
 ];
 
 export default function SectionListExample() {
+  const [selectedCategory, setSelectedCategory] = useState("Makanan"); // Default category is 'Makanan'
+
+  // Mengelompokkan produk berdasarkan kategori
   const groupedProducts = ProductDummy.reduce((acc, product) => {
     if (!acc[product.category]) {
       acc[product.category] = [];
@@ -35,10 +44,25 @@ export default function SectionListExample() {
     title: category,
     data: groupedProducts[category],
   }));
+
+  // Filter produk berdasarkan kategori yang dipilih
+  const filteredSections = sections.filter(
+    (section) => section.title === selectedCategory
+  );
+
   return (
     <View>
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <TouchableOpacity onPress={() => setSelectedCategory("Makanan")}>
+          <Text>Makanan</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setSelectedCategory("Minuman")}>
+          <Text>Minuman</Text>
+        </TouchableOpacity>
+      </View>
+
       <SectionList
-        sections={sections}
+        sections={filteredSections}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={{ padding: 10 }}>
