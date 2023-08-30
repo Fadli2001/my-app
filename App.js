@@ -1,14 +1,12 @@
-import { SafeAreaView,StatusBar } from "react-native";
-import FlatListExample from "./src/components/FlatListExample";
+import { SafeAreaView, StatusBar } from "react-native";
 import SectionListExample from "./src/components/SectionListExample";
 
 export default function App() {
- 
   return (
     <SafeAreaView
       style={{
         flex: 1,
-      }}  
+      }}
     >
       {/* <Counter /> */}
       {/* <Greetings/> */}
@@ -16,7 +14,7 @@ export default function App() {
       {/* <LearnList/> */}
       {/* <FlatListExample/> */}
       <SectionListExample/>
-      <StatusBar style="auto" /> 
+      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }

@@ -7,25 +7,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import ProductDummy from "../utils/ProductDummy";
-
-const cars = [
-  {
-    brand: "Toyota",
-    data: ["Camry", "Corolla", "RAV4", "Hilux", "Prius"],
-  },
-  {
-    brand: "Honda",
-    data: ["Civic", "C-RV", "Accord", "Jazz"],
-  },
-  {
-    brand: "Nissan",
-    data: ["Altima", " Maxima", "Sentra", "Rogue", "Frontier"],
-  },
-  {
-    brand: "Yamaha",
-    data: ["YZF-R1", " MT-07", "FZ6", "VMAX", "YZF-R6"],
-  },
-];
+import ProductCard from "./ProductCard";
 
 export default function SectionListExample() {
   const [selectedCategory, setSelectedCategory] = useState("Makanan"); // Default category is 'Makanan'
@@ -52,38 +34,64 @@ export default function SectionListExample() {
 
   return (
     <View>
-      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <TouchableOpacity onPress={() => setSelectedCategory("Makanan")}>
-          <Text>Makanan</Text>
+      <View style={styles.headerSection}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => setSelectedCategory("Makanan")}
+        >
+          <Text style={styles.btnText}>Makanan</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setSelectedCategory("Minuman")}>
-          <Text>Minuman</Text>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => setSelectedCategory("Minuman")}
+        >
+          <Text style={styles.btnText}>Minuman</Text>
         </TouchableOpacity>
       </View>
-
-      <SectionList
-        sections={filteredSections}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View style={{ padding: 10 }}>
-            <Text>{item.name}</Text>
-            <Text>Price: {item.price}</Text>
-            <Text>Rating: {item.rate}</Text>
-          </View>
-        )}
-        renderSectionHeader={({ section }) => (
-          <View style={{ backgroundColor: "lightgray", padding: 10 }}>
-            <Text style={{ fontWeight: "bold" }}>{section.title}</Text>
-          </View>
-        )}
-      />
+      <View>
+        <SectionList
+          sections={filteredSections}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <ProductCard
+              imgUrl={item.imgUrl}
+              name={item.name}
+              price={item.price}
+              rate={item.rate}
+              terjual={item.terjual}
+              discount={item.discount}
+            />
+          )}
+          renderSectionHeader={({ section }) => (
+            <View>
+              <Text
+                style={{ fontWeight: "bold", marginLeft: 20, fontSize: 23 }}
+              >
+                {section.title}
+              </Text>
+            </View>
+          )}
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  header: {
-    fontSize: 32,
-    backgroundColor: "#fff",
+  headerSection: {
+    flexDirection: "row",
+    justifyContent: "center",
+    backgroundColor: "white",
+    paddingVertical: 15,
+    marginBottom: 10,
+    shadowColor: "#000", // Warna bayangan
+    shadowOpacity: 0.4, // Kejernihan bayangan
+    elevation: 5, // Hanya untuk platform Android
+  },
+  btn: {
+    marginHorizontal: 15,
+    backgroundColor: "#ededed",
+    borderRadius: 9,
+    padding: 7,
   },
 });
