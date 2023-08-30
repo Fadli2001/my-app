@@ -48,6 +48,7 @@ export default function SectionListExample() {
           <Text style={styles.btnText}>Minuman</Text>
         </TouchableOpacity>
       </View>
+      
       <View>
         <SectionList
           sections={filteredSections}

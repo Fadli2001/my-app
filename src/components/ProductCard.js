@@ -7,7 +7,7 @@ export default function ProductCard({
   price,
   rate,
   terjual,
-  discount,
+  discount, 
 }) {
   return (
     <View style={styles.card}>
@@ -23,12 +23,12 @@ export default function ProductCard({
         <Text style={styles.rate}>Rating: {rate}</Text>
         <Text style={styles.rate}>Terjual({terjual})</Text>
         <View style={styles.discountSec}>
-          <Text style={styles.discountText}>HEMAT 80rb</Text>
-          <Text style={styles.discountText}>Diskon {discount}</Text>
+          <Text style={styles.discountText}>HEMAT {(discount*price/100)*1000}</Text>
+          <Text style={styles.discountText}>Diskon {discount*100}%</Text>
         </View>
       </View>
     </View>
-  );
+  ); 
 }
 
 const styles = StyleSheet.create({
